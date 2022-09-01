@@ -1,0 +1,4 @@
+LAB2
+Candiatos a clase: Lab IBIO, equipos, Persona: Técnico y Estudiante; Prestamo
+Atributos: Nombre, ref, proveedor, ciclo mantenimiento, last date, cantidad
+Modo: Prestamo equipos, compra, prestamo
