@@ -63,8 +63,7 @@ def verPrestamos():
         #print(p)
         if carnet in p:
             #print(p)
-            filas.append(p)
-    print(filas)
-            #datos = filas.split(";")
+            datos = p.split(";")
+            filas.append(datos)
             #print(datos)
-            #print(tabulate(datos, header, tablefmt="grid"))
+    print(tabulate(filas, header, tablefmt="grid"))

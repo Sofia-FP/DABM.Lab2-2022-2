@@ -37,9 +37,15 @@ def crearEquipo():
 
     return e
 
-def consultaEquipo():
+def consultarEquipo():
     print('Consulta de equipos')
-    nombre = input("Nombre del equipo: ")
+    equipo = input("Nombre del equipo: ")
+    ListaEquipos = getAllEquipos()
+    for e in ListaEquipos:
+        if equipo in e:
+            datosEquipo = e.split(";")
+            print("existen "+datosEquipo[4]+" "+equipo+"s"+"disponibles")
+
 
 def registroMantenimiento():
     ListaEquipos = getAllEquipos()
@@ -65,5 +71,3 @@ def getAllEquipos():
     datos = a.readlines()
     return datos
 
-def consultarEquipo():
-    pass
