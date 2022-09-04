@@ -1,4 +1,3 @@
-
 from tabulate import tabulate
 
 
@@ -9,10 +8,11 @@ class Prestamo:
         self.carnet = carnet
         self.equipo = equipo
         self.FechaP = FechaP
+        self.FechaE = FechaE
     
     def save(self):
         f = open(self.file,'a')
-        linea = ";".join([self.nombre,self.carnet,self.equipo,self.FechaP])
+        linea = ";".join([self.nombre,self.carnet,self.equipo,self.FechaP,self.FechaE])
         f.write(linea+"\n")
         f.close()
     
@@ -23,9 +23,9 @@ def crearPrestamo():
     carnet = input("Carnet: ")
     equipo = input("equipo: ")
     FechaP = input("Fecha del prestamo (yyyy-mm-dd): ")
-    #FechaE = input("Fecha de entrega (yyyy-mm-dd): ")
+    FechaE = input("Fecha de entrega (yyyy-mm-dd): ")
 
-    p = Prestamo(nombre,carnet,equipo,FechaP,FechaE="")
+    p = Prestamo(nombre,carnet,equipo,FechaP,FechaE)
 
     return p
 
@@ -56,7 +56,7 @@ def getAllPrestamos():
 def verPrestamos():
     ListaPrestamos = getAllPrestamos()
     carnet = input("Ingrese su número de carnet: ")
-    header = ['Nombre','Carnet','Equipo','Fecha del prestamo']
+    header = ['Nombre','Carnet','Equipo','Fecha del prestamo','Fecha de devolución']
     filas = []
     #print(ListaPrestamos)
     for p in ListaPrestamos:

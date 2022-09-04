@@ -8,18 +8,19 @@ class menu:
         print("Laboartorio: "+self.laboratorio)
         print("1. Técnicos")
         print("2. Estudiantes")
-        op = input(">>>")
+        print("3. Salir")
+        op = input(">>> ")
 
         return op
 
 class MenuTecnicos:
     def ver(self):
-        print("Menú Técnicos de Laboratorio".center(20,"*"))
+        print("Menú Técnicos de laboratorio".center(20,"*"))
         print("1. Registrar equipos")
         print("2. Registrar prestamo")
         print("3. Registrar matenimiento")
         print("4. Registrar entrega")
-        op = input(">>>")
+        op = input(">>> ")
 
         return op
 
@@ -28,7 +29,7 @@ class MenuEstudiantes:
         print("Menú Estudiantes".center(20,"*"))
         print("1. Ver prestamos")
         print("2. consultarEquipo")
-        op = input(">>>")
+        op = input(">>> ")
 
         return op
 

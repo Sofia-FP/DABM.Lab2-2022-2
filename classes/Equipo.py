@@ -1,4 +1,5 @@
 from tabulate import tabulate
+from .Prestamo import getAllPrestamos
 
 class Equipo:
     file = "C:/Users/anaso/Documents/DABM/LAB2/database/equipo.csv"
@@ -40,11 +41,19 @@ def crearEquipo():
 def consultarEquipo():
     print('Consulta de equipos')
     equipo = input("Nombre del equipo: ")
+    ListaPrestamos = getAllPrestamos()
     ListaEquipos = getAllEquipos()
     for e in ListaEquipos:
         if equipo in e:
-            datosEquipo = e.split(";")
-            print("existen "+datosEquipo[4]+" "+equipo+"s"+"disponibles")
+            datosE = e.split(";")
+    #print(datos)
+    res = []
+    for p in ListaPrestamos:
+        if equipo in p:
+            datosP = p.split(";")
+            res.append(datosP)
+            c = str(int(datosE[4])-len(res))
+    print("Existen "+c+" "+equipo+"s "+"disponibles para prestamo")
 
 
 def registroMantenimiento():
